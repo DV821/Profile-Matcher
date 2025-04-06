@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={{ url_for('static', filename='styles.css') }} >
+    <title>User Profile Form</title>
+</head>
+<body>
+    <h2>Enter details of 2nd User</h2>
+    <form method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id= "name" name="name"><br><br>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" value = "16"><br><br>
+        
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+            <option value=0>Single</option>
+            <option value=1>Seeing Someone</option>
+            <option value=2>Married</option>
+            <option value=3>Available</option>
+        </select><br><br>
+        
+        <label for="sex">Sex:</label>
+        <select id="sex" name="sex">
+            <option value="m">Male</option>
+            <option value="f">Female</option>
+        </select><br><br>
+        
+        <label for="orientation">Orientation:</label>
+        <select id="orientation" name="orientation">
+            <option value="gay">Gay</option>
+            <option value="bisexual">Bisexual</option>
+            <option value="straight">Straight</option>
+        </select><br><br>
+        
+        <label for="drinks">Drinks:</label>
+        <select id="drinks" name="drinks">
+            <option value=0>Socially</option>
+            <option value=1>Often</option>
+            <option value=2>Rarely</option>
+            <option value=3>Very Often</option>
+            <option value=4>Not at All</option>
+            <option value=5>Desperately</option>
+        </select><br><br>
+        
+        <label for="drugs">Drugs:</label>
+        <select id="drugs" name="drugs">
+            <option value=0>Never</option>
+            <option value=1>Sometimes</option>
+            <option value=2>Often</option>
+        </select><br><br>
+        
+        <label for="height">Height (cms):</label>
+        <input type="number" id="height" name="height" value = "120"><br><br>
+        
+        <label for="job">Job:</label>
+        <select id="job" name="job">
+                {% for option in jobs %}
+                    <option value="{{ option }}">{{ option }}</option>
+                {% endfor %}
+        </select><br><br>
+        
+        <label for="location">Location:</label>
+        <select id="location" name="location">
+                {% for option in locations %}
+                    <option value="{{ option }}">{{ option }}</option>
+                {% endfor %}
+        </select><br><br>
+        
+        <label for="pets">Pets:</label>
+        <select id="pets" name="pets">
+                {% for option in pets %}
+                    <option value="{{ option }}">{{ option }}</option>
+                {% endfor %}
+        </select><br><br>
+        
+        <label for="smokes">Smokes:</label>
+        <select id="smokes" name="smokes">
+            <option value="0">No</option>
+            <option value="1">Sometimes</option>
+            <option value="2">Yes</option>
+            <option value="3">When Drinking</option>
+            <option value="4">Trying to Quit</option>
+        </select><br><br>
+
+        <div class="flex-container">
+            <label>Language(s):</label>
+            <div class="dropdown">
+                <button type="button">Select</button>
+                <div class="dropdown-content">
+                    <div class="checkbox-grid">
+                        {% for option in all_langs %}
+                            <label>
+                                <input type="checkbox" name="all_langs" value="{{ option }}">{{ option }}
+                            </label>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <label for="new_languages">New Languages:</label>
+        <select id="new_languages" name="new_languages">
+                <option value="0">Interested</option>
+                <option value="1">Not Interested</option>
+                <option value="2">Somewhat Interests</option>
+        </select><br><br>
+        
+        <label for="body_prof">Body Profile:</label>
+        <select id="body_prof" name="body_prof">
+                {% for option in body_prof %}
+                    <option value="{{ option }}">{{ option }}</option>
+                {% endfor %}
+        </select><br><br>
+        
+        <label for="education_level">Education Level:</label>
+        <select id="education_level" name="education_level">
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>3</option>
+            <option value=5>5</option>
+        </select><br><br>
+        
+        <label for="dropped_out">Dropped Out</label>
+        <select id="dropped_out" name="dropped_out">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+        
+        <label for="bio">Bio:</label>
+        <textarea id="bio" name="bio" rows="4" cols="50"></textarea><br><br>
+        
+        <label for="interests">Interests:</label>
+        <select id="interests" name="interests">
+                {% for option in interests %}
+                    <option value="{{ option }}">{{ option }}</option>
+                {% endfor %}
+        </select><br><br>
+        
+        <label for="othr_interests">Other Interests:</label>
+        <select id="othr_interests" name="othr_interests">
+                {% for option in othr_interests %}
+                    <option value="{{ option }}">{{ option }}</option>
+                {% endfor %}
+        </select><br><br>
+        
+        <label for="location_preference">Location Preference:</label>
+        <select id="location_preference" name="location_preference">
+            <option value="0">Same City</option>
+            <option value="1">Anywhere</option>
+            <option value="2">Same State</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

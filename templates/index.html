@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= {{ url_for('static', filename='index.css') }}>
+    <title>Welcome to Profile Matcher</title>
+</head>
+<body>
+    <div class="container">
+        <p class="welcome">Welcome to Profile Matcher!</p>
+        <p class="message">Find your perfect match based on shared interests and preferences.</p>
+        <p class="description">Our platform uses advanced algorithms to connect you with profiles that suit your preferences. Start your journey to find meaningful connections today!</p>
+        <form action="{{ url_for('user1_profile') }}" method="GET">
+            <input type="submit" value="Get Started">
+        </form>
+    </div>
+</body>
+</html>

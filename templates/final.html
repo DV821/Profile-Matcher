@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={{ url_for('static', filename='final.css') }} >
+    <title>Match Percentage</title>
+</head>
+<body>
+    <div class="container">
+        <div class="percentage-display">
+            
+            
+            {% if percentage == 100 %}
+                <p class="perfect-match">You're a perfect match!</p>
+                <div class="romantic-message">
+                    <p>Love is in the air! 💖</p>
+                </div>
+            {% else %}
+                <h2>Your Match Percentage</h2>
+                <h3 id="percentage">{{ percentage }}%</h3>
+            {% endif %}
+            
+        </div>
+
+        <form action="{{ url_for('reset_user1') }}" method="GET">
+            <input type="submit" value="Reset">
+        </form>
+    </div>
+
+</body>
+</html>
